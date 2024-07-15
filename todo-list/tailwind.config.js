@@ -1,9 +1,23 @@
+// /** @type {import('tailwindcss').Config} */
+// export default {
+//   content: [],
+//   theme: {
+//     fontFamily: {
+//       sans: ["Inter"],
+//     },
+//   },
+//   plugins: [],
+// };
+
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [],
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+    },
   },
   plugins: [],
-}
-
+};
