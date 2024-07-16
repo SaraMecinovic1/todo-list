@@ -8,8 +8,8 @@ const SideBar = () => {
       <AddTodoForm />
 
       <div className="mt-auto space-y-2">
-        <Button />
-        <Button />
+        <Button buttonType="secondary">Login</Button>
+        <Button buttonType="secondary">Register</Button>
       </div>
     </section>
   );

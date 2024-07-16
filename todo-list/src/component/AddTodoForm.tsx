@@ -9,7 +9,7 @@ const AddTodoForm = () => {
         className="h-[45px] px-[16px] border border-black/[12%] rounded-[5px] my-[9px] text-[14px] block w-full"
         type="text"
       />
-      <Button />
+      <Button>Add to list</Button>
     </>
   );
 };
