@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Counter = ({ todos }) => {
-  const [count, setCount] = useState(0);
   return (
-    <p
-      onClick={() => {
-        setCount((prev) => prev + 1);
-      }}
-    >
-      <b>{count}</b>/0 todos completed
+    <p>
+      <b>{todos.filter((todo) => todo.isCompleted).length}</b> / {todos.length} todos completed
     </p>
   );
 };
+
 export default Counter;
