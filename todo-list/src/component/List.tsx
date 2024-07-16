@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import DeleteButton from "./DeleteButton";
 import Button from "./Button";
 
-const List = () => {
-  const [todos, setTodos] = useState([
-    { text: "buy bananas", isComplited: false, id: 1 },
-    { text: "write letter", isComplited: true, id: 2 },
-    { text: "make dinner", isComplited: false, id: 3 },
-  ]);
-
+const List = ({ todos, setTodos }) => {
   return (
     <ul>
       {todos.map((todo, index) => (
         <li
+          onClick={() => {
+            setTodos(
+              todos.map((t) => {
+                if (t.id === todo.id) {
+                  // t - originalni niz , todo.id - to sto je kliknuto
+                  return { ...todo, isComplited: !t.isComplited };
+                }
+                return t;
+              })
+            );
+          }}
           key={index}
           className="flex justify-between items-center px-8 h-[50px] text-[14px] cursor-pointer border-b border-black/[8%]"
         >

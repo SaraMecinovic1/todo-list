@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Counter = () => {
+const Counter = ({ todos }) => {
   const [count, setCount] = useState(0);
   return (
     <p
