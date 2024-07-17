@@ -1,11 +1,11 @@
 import React from "react";
 
-const DeleteButton = ({ setTodos, id }) => {
+const DeleteButton = ({ id, deleteTodo }) => {
   return (
     <button
       onClick={(e) => {
         e.stopPropagation();
-        setTodos((prev) => prev.filter((todo) => todo.id !== id));
+        deleteTodo(id);
       }}
     >
       ❌

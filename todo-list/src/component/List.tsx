@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DeleteButton from "./DeleteButton";
 
-const List = ({ todos, setTodos }) => {
+const List = ({ todos, deleteTodo, toggleTodo }) => {
   return (
     <ul>
       {todos.length === 0 ? (
@@ -12,15 +12,7 @@ const List = ({ todos, setTodos }) => {
       {todos.map((todo, index) => (
         <li
           onClick={() => {
-            setTodos(
-              todos.map((t) => {
-                if (t.id === todo.id) {
-                  // t - originalni niz , todo.id - to sto je kliknuto
-                  return { ...todo, isCompleted: !t.isCompleted }; // Ovde je ispravka
-                }
-                return t;
-              })
-            );
+            toggleTodo(todo.id);
           }}
           key={index}
           className="flex justify-between items-center px-8 h-[50px] text-[14px] cursor-pointer border-b border-black/[8%]"
@@ -30,7 +22,7 @@ const List = ({ todos, setTodos }) => {
           >
             {todo.text}
           </span>{" "}
-          <DeleteButton id={todo.id} setTodos={setTodos} />
+          <DeleteButton id={todo.id} deleteTodo={deleteTodo} />
         </li>
       ))}
     </ul>

@@ -1,17 +1,19 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
-const AddTodoForm = ({ todos, setTodos }) => {
+const AddTodoForm = ({ handleAddTodo }) => {
   const [todoText, setTodoText] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleAddTodo(todoText);
+    setTodoText("");
+  };
+
   return (
     <>
-      <h2 className="font-medium text-[#231d15 ]">Add a todo</h2>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          setTodoText("");
-        }}
-      >
+      <h2 className="font-medium text-[#231d15]">Add a todo</h2>
+      <form onSubmit={handleSubmit}>
         <input
           className="h-[45px] px-[16px] border border-black/[12%] rounded-[5px] my-[9px] text-[14px] block w-full"
           type="text"
