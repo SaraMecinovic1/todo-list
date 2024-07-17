@@ -4,6 +4,11 @@ import DeleteButton from "./DeleteButton";
 const List = ({ todos, setTodos }) => {
   return (
     <ul>
+      {todos.length === 0 ? (
+        <li className=" h-full flex justify-center items-center font-semibold">
+          Start by adding new todo
+        </li>
+      ) : null}
       {todos.map((todo, index) => (
         <li
           onClick={() => {

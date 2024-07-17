@@ -8,6 +8,40 @@ import SideBar from "./SideBar";
 function App() {
   const [todos, setTodos] = useState([]);
 
+  // const addToDo = ({todoText}) => {
+  //   if (todos.length >= 3) {
+  //     alert("Molimo vas da se prijavite da biste dodali više od 3 zadatka!");
+  //   } else {
+  //     setTodos((prev) => [
+  //       ...prev,
+  //       {
+  //         id: prev.length + 1,
+  //         text: todoText,
+  //         isCompleted: false,
+  //       },
+  //     ]);
+  //   }
+  // };
+
+  const addTodo = (todoText) => {
+    if (todos.length >= 3) {
+      alert("lOGIN IF YOU WANT TO ADD MORE THAN 3 TODOS");
+    } else {
+      setTodos((prev) => [
+        ...prev,
+        {
+          id: prev.length + 1,
+          text: todoText,
+          isCompleted: false,
+        },
+      ]);
+    }
+  };
+
+  const deleteTodo=(id)=>{
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  }
+
   return (
     <div className="flex flex-col justify-center items-center font-sans bg-[#f1d4b3] min-h-screen">
       <BackgroundHeading />
