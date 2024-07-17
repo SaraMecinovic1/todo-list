@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import DeleteButton from "./DeleteButton";
-import Button from "./Button";
 
 const List = ({ todos, setTodos }) => {
   return (
@@ -12,7 +11,7 @@ const List = ({ todos, setTodos }) => {
               todos.map((t) => {
                 if (t.id === todo.id) {
                   // t - originalni niz , todo.id - to sto je kliknuto
-                  return { ...todo, isComplited: !t.isComplited };
+                  return { ...todo, isCompleted: !t.isCompleted }; // Ovde je ispravka
                 }
                 return t;
               })
@@ -22,7 +21,7 @@ const List = ({ todos, setTodos }) => {
           className="flex justify-between items-center px-8 h-[50px] text-[14px] cursor-pointer border-b border-black/[8%]"
         >
           <span
-            className={`${todo.isComplited ? "line-through text-[#ccc]" : ""}`}
+            className={`${todo.isCompleted ? "line-through text-[#ccc]" : ""}`}
           >
             {todo.text}
           </span>{" "}
