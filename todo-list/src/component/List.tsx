@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import DeleteButton from "./DeleteButton";
 
-const List = ({ todos, deleteTodo, toggleTodo }) => {
+type TodoListProps = {
+  todos: ,
+  deleteTodo: (id:number)=>void,
+  toggleTodo: (id:number)=>void
+};
+const List = ({ todos, deleteTodo, toggleTodo }: TodoListProps) => {
   return (
     <ul>
       {todos.length === 0 ? (
