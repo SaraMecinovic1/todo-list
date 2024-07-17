@@ -20,7 +20,7 @@ const AddTodoForm = (props: { handleAddTodo: (todoText: string) => void }) => {
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
         />
-        <Button type="submit">Add to list</Button>
+        <Button>Add to list</Button>
       </form>
     </>
   );

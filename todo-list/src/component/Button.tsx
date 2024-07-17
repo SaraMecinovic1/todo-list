@@ -1,7 +1,11 @@
 import React from "react";
 
-const Button = (props) => {
-  const { buttonType, children } = props;
+type ButtonProps = {
+  buttonType?: "primary" | "secondary";
+  children: React.ReactNode;
+};
+
+const Button = ({ buttonType, children }: ButtonProps) => {
   // isto kada bi pisali props.children/props.buttonType
   return (
     <button
