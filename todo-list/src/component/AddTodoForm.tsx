@@ -1,29 +1,30 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "./Button";
+import { TodosContext } from "../contexts/TodosContextProvider";
 
-const AddTodoForm = (props: { handleAddTodo: (todoText: string) => void }) => {
-  const [todoText, setTodoText] = useState("");
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    props.handleAddTodo(todoText);
-    setTodoText("");
-  };
+export default function AddTodoForm() {
+  const [todoContent, setTodoContent] = useState("");
+  const { handleAddTodo } = useContext(TodosContext);
 
   return (
-    <>
-      <h2 className="font-medium text-[#231d15]">Add a todo</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          className="h-[45px] px-[16px] border border-black/[12%] rounded-[5px] my-[9px] text-[14px] block w-full"
-          type="text"
-          value={todoText}
-          onChange={(e) => setTodoText(e.target.value)}
-        />
-        <Button>Add to list</Button>
-      </form>
-    </>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleAddTodo(todoContent);
+        setTodoContent("");
+      }}
+    >
+      <h2 className="text-[#231d15] text-[16px] font-medium">Add a todo</h2>
+      <input
+        type="text"
+        autoFocus
+        className="h-[45px] w-full border-[1px] border-[rgba(0,0,0,0.12)] rounded-[5px] ml-[0] mr-[0] my-[9px] px-[16px] py-[0] text-[14px]"
+        value={todoContent}
+        onChange={(e) => {
+          setTodoContent(e.target.value);
+        }}
+      />
+      <Button>Add to list</Button>
+    </form>
   );
-};
-
-export default AddTodoForm;
+}

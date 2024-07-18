@@ -1,13 +1,11 @@
 // import React, { useState } from "react";
+import { useContext } from "react";
 import { Todo } from "../lib/types";
 import DeleteButton from "./DeleteButton";
+import { TodosContext } from "../contexts/TodosContextProvider";
 
-type TodoListProps = {
-  todos: Todo[];
-  deleteTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
-};
-const List = ({ todos, deleteTodo, toggleTodo }: TodoListProps) => {
+const List = () => {
+  const { todos, deleteTodo, toggleTodo } = useContext(TodosContext);
   return (
     <ul>
       {todos.length === 0 ? (
@@ -28,7 +26,7 @@ const List = ({ todos, deleteTodo, toggleTodo }: TodoListProps) => {
           >
             {todo.text}
           </span>{" "}
-          <DeleteButton id={todo.id} deleteTodo={deleteTodo} />
+          <DeleteButton id={todo.id} onDeleteTodo={deleteTodo} />
         </li>
       ))}
     </ul>

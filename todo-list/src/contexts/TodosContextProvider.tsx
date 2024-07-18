@@ -1,11 +1,21 @@
 import React, { createContext, useState } from "react";
 import { Todo } from "../lib/types";
 
-export const TodosContext = createContext(null);
+export const TodosContext = createContext<TTodosContext>(null);
 
 type TodosContextProviderProps = {
   children: React.ReactNode;
 };
+
+type TTodosContext = {
+  todos: Todo[];
+  totalNumberOfTodos: number;
+  numberOfCompletedTodos: number;
+  handleAddTodo: (todoText: string) => void;
+  deleteTodo: (id: number) => void;
+  toggleTodo: (id: number) => void;
+};
+
 const TodosContextProvider = ({ children }: TodosContextProviderProps) => {
   // state
   const [todos, setTodos] = useState<Todo[]>([]);

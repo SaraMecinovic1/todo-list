@@ -1,14 +1,10 @@
 import AddTodoForm from "./AddTodoForm";
 import Button from "./Button";
 
-type SideBarProps = {
-  handleAddTodo: (todoText: string) => void;
-};
-
-const SideBar = ({ handleAddTodo }: SideBarProps) => {
+const SideBar = () => {
   return (
     <section className="col-[2/3] row-[2/3] bg-[#fffcf9] border-l border-black/[0.10] px-[25px] pt-[18px] pb-[28px] flex flex-col h-full">
-      <AddTodoForm handleAddTodo={handleAddTodo} />
+      <AddTodoForm  />
 
       <div className="mt-auto space-y-2">
         <Button buttonType="secondary">Login</Button>

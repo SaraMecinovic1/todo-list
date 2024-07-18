@@ -10,12 +10,9 @@ function App() {
       <BackgroundHeading />
 
       <main className="relative w-[872px] h-[590px] bg-white rounded-[8px] shadow-[0_4px_4px_rgba(0,0,0,0,0.8)] grid grid-cols-[7fr_4fr] grid-rows-[59px_1fr] overflow-hidden">
-        <Header
-          totalNumberOfTodos={totalNumberOfTodos}
-          numberOfCompletedTodos={numberOfCompletedTodos}
-        />
-        <List todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
-        <SideBar handleAddTodo={handleAddTodo} />
+        <Header />
+        <List />
+        <SideBar />
       </main>
       <Footer />
     </div>
