@@ -1,11 +1,14 @@
 import React from "react";
 
-const Counter = ({ todos }) => {
-  const completedCount = todos.filter((todo) => todo.isCompleted).length;
+type CounterProps = {
+  totalNumberOfTodos: number;
+  numberOfCompletedTodos: number;
+};
 
+const Counter = ({ totalNumberOfTodos, numberOfCompletedTodos }: CounterProps) => {
   return (
     <p>
-      <b>{completedCount}</b> / {todos.length} todos completed
+      <b>{numberOfCompletedTodos}</b> / {totalNumberOfTodos} todos completed
     </p>
   );
 };

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import DeleteButton from "./DeleteButton";
+import { Todo } from "./App";
 
 type TodoListProps = {
-  todos: ,
-  deleteTodo: (id:number)=>void,
-  toggleTodo: (id:number)=>void
+  todos: Todo[];
+  deleteTodo: (id: number) => void;
+  toggleTodo: (id: number) => void;
 };
 const List = ({ todos, deleteTodo, toggleTodo }: TodoListProps) => {
   return (

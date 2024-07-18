@@ -1,6 +1,9 @@
-import React from "react";
+type deleteButtonProps = {
+  id: number;
+  deleteTodo: (id: number) => void;
+};
 
-const DeleteButton = ({ id, deleteTodo }) => {
+const DeleteButton = ({ id, deleteTodo }: deleteButtonProps) => {
   return (
     <button
       onClick={(e) => {
