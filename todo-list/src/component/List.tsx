@@ -1,11 +1,9 @@
 // import React, { useState } from "react";
-import { useContext } from "react";
-import { Todo } from "../lib/types";
 import DeleteButton from "./DeleteButton";
-import { TodosContext } from "../contexts/TodosContextProvider";
+import { useTodosContext } from "../lib/hooks";
 
 const List = () => {
-  const { todos, deleteTodo, toggleTodo } = useContext(TodosContext);
+  const { todos, toggleTodo, deleteTodo } = useTodosContext();
   return (
     <ul>
       {todos.length === 0 ? (

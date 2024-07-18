@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 import { Todo } from "../lib/types";
 
-export const TodosContext = createContext<TTodosContext>(null);
+export const TodosContext = createContext<TTodosContext | null>(null);
 
 type TodosContextProviderProps = {
   children: React.ReactNode;
