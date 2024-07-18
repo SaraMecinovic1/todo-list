@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Todo } from "../lib/types";
 
 export const TodosContext = createContext<TTodosContext | null>(null);
@@ -56,6 +56,21 @@ const TodosContextProvider = ({ children }: TodosContextProviderProps) => {
       })
     );
   };
+
+  // side effects
+  // useEffect(() => {
+  //   const fetchTodos = async () => {
+  //     const response = await fetch(
+  //       "https://bytegrad.com/course-assets/api/todos"
+  //     );
+  //     const todos = await response.json();
+  //     setTodos(todos);
+
+  //     setIsLoading(false);
+  //   };
+
+  //   fetchTodos();
+  // }, []);
 
   return (
     <TodosContext.Provider
