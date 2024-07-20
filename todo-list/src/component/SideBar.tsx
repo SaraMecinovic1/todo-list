@@ -15,7 +15,7 @@ const SideBar = () => {
       <div className="mt-auto space-y-2">
         {isLoading ? null : isAuthenticated ? (
           <>
-            <p className="text-sm">Logged in as {user?.given_name}</p>
+            <p className="text-sm">Logged in as: {user?.given_name}</p>
             <Button onClick={logout} buttonType="secondary">
               {" "}
               Logout
