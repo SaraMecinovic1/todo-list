@@ -66,22 +66,9 @@ const TodosContextProvider = ({ children }: TodosContextProviderProps) => {
     );
   };
 
-  // side effects
-  // useEffect(() => {
-  //   const fetchTodos = async () => {
-  //     const response = await fetch(
-  //       "https://bytegrad.com/course-assets/api/todos"
-  //     );
-  //     const todos = await response.json();
-  //     setTodos(todos);
-
-  //     setIsLoading(false);
-  //   };
-
-  //   fetchTodos();
-  // }, []);
+  // Ovaj useEffect- čuva todo stavke u localStorage svaki put kada se stanje todos promeni
   useEffect(() => {
-    localStorage.setItem("todos: ", JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   return (
