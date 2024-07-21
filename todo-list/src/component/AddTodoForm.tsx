@@ -24,7 +24,7 @@ export default function AddTodoForm() {
           setTodoContent(e.target.value);
         }}
       />
-      <Button>Add to list</Button>
+      <Button onClick={() => handleAddTodo(todoContent)}>Add to list</Button>
     </form>
   );
 }
