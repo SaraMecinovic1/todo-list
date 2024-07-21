@@ -1,7 +1,7 @@
 import React from "react";
 
 type ButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   buttonType?: "primary" | "secondary";
   children: React.ReactNode;
 };
